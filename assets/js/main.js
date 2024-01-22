@@ -340,20 +340,4 @@
       },
       retina_detect: !0,
     });
-
-
-
-  // const axios = require('axios');
-
-  // const obtenerValorDolar = async () => {
-  //   try {
-  //     const response = await axios.get('https://dolarapi.com/v1/dolares/oficial');
-  //     const valorDolar = response.data.venta; // Puedes cambiar a 'compra' si necesitas el valor de compra
-  //     console.log(`El valor del dólar oficial es: ${valorDolar}`);
-  //   } catch (error) {
-  //     console.error('Error al obtener el valor del dólar:', error.message);
-  //   }
-  // };
-
-  // obtenerValorDolar();
 })();
