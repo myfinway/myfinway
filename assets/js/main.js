@@ -7,8 +7,10 @@
   };
 
   function fadeout() {
-    document.querySelector(".preloader").style.opacity = "0";
-    document.querySelector(".preloader").style.display = "none";
+    if (document.querySelector(".preloader") != null) {
+      document.querySelector(".preloader").style.opacity = "0";
+      document.querySelector(".preloader").style.display = "none";
+    }
   }
 
   // ======= Sticky
@@ -64,6 +66,7 @@
       const refElement = document.querySelector(val);
       const scrollTopMinus = scrollPos + 73;
       if (
+        refElement != null &&
         refElement.offsetTop <= scrollTopMinus &&
         refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
       ) {
@@ -337,4 +340,20 @@
       },
       retina_detect: !0,
     });
+
+
+
+  // const axios = require('axios');
+
+  // const obtenerValorDolar = async () => {
+  //   try {
+  //     const response = await axios.get('https://dolarapi.com/v1/dolares/oficial');
+  //     const valorDolar = response.data.venta; // Puedes cambiar a 'compra' si necesitas el valor de compra
+  //     console.log(`El valor del dólar oficial es: ${valorDolar}`);
+  //   } catch (error) {
+  //     console.error('Error al obtener el valor del dólar:', error.message);
+  //   }
+  // };
+
+  // obtenerValorDolar();
 })();
