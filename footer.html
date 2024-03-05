@@ -10,9 +10,9 @@
             </div>
             <div class="col-lg-6">
                 <div class="subscribe-form mt-50">
-                    <form id="subscribeForm">
-                        <input id="emailInput" type="text" placeholder="Ingresa tu email" />
-                        <button type="submit" id="subscribeBtn" class="main-btn">Suscribirse</button>
+                    <form action="https://formspree.io/f/xkndznvz" method="POST">
+                        <input type="email" name="email" type="text" placeholder="Ingresa tu email" />
+                        <button type="submit" class="main-btn">Suscribirse</button>
                     </form>
                 </div>
             </div>
@@ -75,13 +75,13 @@
 <div id="particles-2"></div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         var subscribeForm = document.getElementById('subscribeForm');
         var subscribeMessage = document.getElementById('subscribeMessage');
         var emailInput = document.getElementById('emailInput');
         var subscribeBtn = document.getElementById('subscribeBtn');
 
-        subscribeBtn.addEventListener('click', function(event) {
+        subscribeBtn.addEventListener('click', function (event) {
             event.preventDefault(); // Evitar la función predeterminada del botón de envío
 
             // Mostrar el mensaje de agradecimiento
@@ -89,12 +89,10 @@
             subscribeMessage.style.display = 'block';
 
             // Limpiar el campo de correo electrónico después de 3 segundos
-            setTimeout(function() {
+            setTimeout(function () {
                 subscribeMessage.style.display = 'none';
                 emailInput.value = ''; // Limpiar el campo de correo electrónico
             }, 3000);
         });
     });
 </script>
-
-

@@ -342,58 +342,20 @@
     });
 
   // Cargar el contenido del footer
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   fetch('footer.html')
-  //     .then(response => {
-  //       if (!response.ok) {
-  //         throw new Error('Network response was not ok');
-  //       }
-  //       return response.text();
-  //     })
-  //     .then(data => {
-  //       document.getElementById('footer-placeholder').innerHTML = data;
-  //     })
-  //     .catch(error => {
-  //       console.error('There has been a problem with your fetch operation:', error);
-  //     });
-  // });
-
-  //Para que aparezca un mensaje en newsletter
   document.addEventListener("DOMContentLoaded", function () {
-    var subscribeForm = document.getElementById('subscribeForm');
-    var subscribeMessage = document.getElementById('subscribeMessage');
-    var emailInput = document.getElementById('emailInput');
-    var subscribeBtn = document.getElementById('subscribeBtn');
-
-    subscribeBtn.addEventListener('click', function (event) {
-        event.preventDefault(); // Evitar la función predeterminada del botón de envío
-
-        // Verificar si se ha ingresado un correo electrónico válido
-        var email = emailInput.value.trim();
-        if (!email || !isValidEmail(email)) {
-            // Mostrar un mensaje de error si el correo electrónico no es válido
-            subscribeMessage.innerText = 'Por favor, ingresa un correo electrónico válido.';
-            subscribeMessage.style.display = 'block';
-            subscribeMessage.classList.add('error-message'); // Agregar la clase de estilo de mensaje de error
-            subscribeMessage.classList.remove('success-message'); // Eliminar la clase de estilo de mensaje de éxito
-            return; // Detener la ejecución si el correo electrónico no es válido
+    fetch('footer.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
         }
-
-        // Mostrar el mensaje de agradecimiento
-        subscribeMessage.innerText = '¡Gracias por suscribirte!';
-        subscribeMessage.style.display = 'block';
-        subscribeMessage.classList.remove('error-message'); // Eliminar la clase de estilo de mensaje de error
-        subscribeMessage.classList.add('success-message'); // Agregar la clase de estilo de mensaje de éxito
-    });
-
-    // Función para verificar si un correo electrónico es válido
-    function isValidEmail(email) {
-        // Utiliza una expresión regular para validar el formato del correo electrónico
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-});
-
-
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+      });
+  });
 
 })();
