@@ -4,15 +4,15 @@
             <div class="col-lg-6">
                 <div class="subscribe-content mt-45">
                     <h2 class="subscribe-title">
-                        Suscribete al Newsletter <span>Para recibir material exclusivo</span>
+                        Suscríbete al Newsletter <span>Para recibir material exclusivo</span>
                     </h2>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="subscribe-form mt-50">
-                    <form action="#">
-                        <input type="text" placeholder="Ingresa tu email" />
-                        <button class="main-btn">Subscribirse</button>
+                    <form id="subscribeForm">
+                        <input id="emailInput" type="text" placeholder="Ingresa tu email" />
+                        <button type="submit" id="subscribeBtn" class="main-btn">Suscribirse</button>
                     </form>
                 </div>
             </div>
@@ -20,71 +20,81 @@
         <!-- row -->
     </div>
     <!-- subscribe area -->
-    <div class="footer-widget pb-100">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-8">
-                <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                    <a class="logo" href="javascript:void(0)">
-                        <img src="assets/images/logo/logo.png" alt="logo" />
-                    </a>
-                    <p class="text">
-                        ¡Animate a tomar el control de tus finanzas!
-                    </p>
-                    <ul class="social">
+    <div id="subscribeMessage" class="subscribe-message"></div>
+</div>
+
+<div class="footer-widget pb-100">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                <a class="logo" href="javascript:void(0)">
+                    <img src="assets/images/logo/logo.png" alt="logo" />
+                </a>
+                <p class="text">
+                    ¡Anímate a tomar el control de tus finanzas!
+                </p>
+                <ul class="social">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="lni lni-facebook-filled"> </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="lni lni-instagram-filled"> </i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- footer about -->
+        </div>
+
+        <div class="col-lg-5 col-md-7 col-sm-12">
+            <div class="col-lg-3 col-md-5 col-sm-12">
+                <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                    <div class="footer-title">
+                        <h4 class="title">Contacto</h4>
+                    </div>
+                    <ul class="contact">
+                        <li>+543434389413</li>
+                        <li>contact.finway@gmail.com</li>
+                        <li>www.myfinway.com</li>
                         <li>
-                            <a href="javascript:void(0)">
-                                <i class="lni lni-facebook-filled"> </i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="lni lni-instagram-filled"> </i>
-                            </a>
+                            Argentina
                         </li>
                     </ul>
                 </div>
-                <!-- footer about -->
+                <!-- footer contact -->
             </div>
-
-            <div class="col-lg-5 col-md-7 col-sm-12">
-                <div class="col-lg-3 col-md-5 col-sm-12">
-                    <div class="footer-contact mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="footer-title">
-                            <h4 class="title">Contacto</h4>
-                        </div>
-                        <ul class="contact">
-                            <li>+543434389413</li>
-                            <li>contact.finway@gmail.com</li>
-                            <li>www.myfinway.com</li>
-                            <li>
-                                Argentina
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- footer contact -->
-                </div>
-            </div>
-            <!-- row -->
         </div>
-        <!-- footer widget -->
-        <div class="footer-copyright">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="copyright d-sm-flex justify-content-between">
-                        <div class="copyright-content">
-                            <p class="text">
-                                Diseñado y desarrollado por
-                                <a href="https://myfinway.com" rel="nofollow">MyFinway</a>
-                            </p>
-                        </div>
-                        <!-- copyright content -->
-                    </div>
-                    <!-- copyright -->
-                </div>
-            </div>
-            <!-- row -->
-        </div>
-        <!-- footer copyright -->
+        <!-- row -->
     </div>
-    <!-- container -->
-    <div id="particles-2"></div>
+    <!-- footer widget -->
+</div>
+<!-- container -->
+<div id="particles-2"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var subscribeForm = document.getElementById('subscribeForm');
+        var subscribeMessage = document.getElementById('subscribeMessage');
+        var emailInput = document.getElementById('emailInput');
+        var subscribeBtn = document.getElementById('subscribeBtn');
+
+        subscribeBtn.addEventListener('click', function(event) {
+            event.preventDefault(); // Evitar la función predeterminada del botón de envío
+
+            // Mostrar el mensaje de agradecimiento
+            subscribeMessage.innerText = 'Gracias por suscribirte';
+            subscribeMessage.style.display = 'block';
+
+            // Limpiar el campo de correo electrónico después de 3 segundos
+            setTimeout(function() {
+                subscribeMessage.style.display = 'none';
+                emailInput.value = ''; // Limpiar el campo de correo electrónico
+            }, 3000);
+        });
+    });
+</script>
+
+
