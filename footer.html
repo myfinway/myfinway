@@ -23,7 +23,7 @@
     <div id="subscribeMessage" class="subscribe-message"></div>
 </div>
 
-<div class="footer-widget pb-100" style="padding: 30px !important;">
+<div class="footer-widget pb-100" style="padding: 4rem !important;">
     <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-8">
             <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
@@ -73,26 +73,3 @@
 </div>
 <!-- container -->
 <div id="particles-2"></div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var subscribeForm = document.getElementById('subscribeForm');
-        var subscribeMessage = document.getElementById('subscribeMessage');
-        var emailInput = document.getElementById('emailInput');
-        var subscribeBtn = document.getElementById('subscribeBtn');
-
-        subscribeBtn.addEventListener('click', function (event) {
-            event.preventDefault(); // Evitar la función predeterminada del botón de envío
-
-            // Mostrar el mensaje de agradecimiento
-            subscribeMessage.innerText = 'Gracias por suscribirte';
-            subscribeMessage.style.display = 'block';
-
-            // Limpiar el campo de correo electrónico después de 3 segundos
-            setTimeout(function () {
-                subscribeMessage.style.display = 'none';
-                emailInput.value = ''; // Limpiar el campo de correo electrónico
-            }, 3000);
-        });
-    });
-</script>
