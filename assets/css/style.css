@@ -699,11 +699,11 @@ p {
   max-width: 650px;
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .header-hero-image img {
     max-width: 100%;
   }
-}
+} */
 
 @media (max-width: 767px) {
   .header-hero-image {
